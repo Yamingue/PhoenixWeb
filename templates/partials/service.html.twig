@@ -8,15 +8,16 @@
         </div>
 
         <div class="row">
+              {% for solution in solutions %}
             <div class="col-lg-4 col-sm-6">
                 <div class="single-service">
                     <div class="service-img">
-                        <img src="assets/images/service/s1.png" alt="service" />
+                        <img src="image/{{ solution.poster}}" alt="service" />
                     </div>
-
+                    
                     <div class="service-content">
-                        <h3>Visual Design</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
+                        <h3>{{ solution.title}}</h3>
+                        <p>{{ solution.shortText}}</p>
                         
                         <a href="solutions-details.html" class="line-bnt">
                             Read More
@@ -24,91 +25,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/s2.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>Development</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-                    
-                        <a href="solutions-details.html" class="line-bnt">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/s3.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>QA Testing</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-
-                        <a href="solutions-details.html" class="line-bnt">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/s4.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3>IT Management</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-                    
-                        <a href="solutions-details.html" class="line-bnt">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/s5.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3> Cyber Security</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-
-                        <a href="solutions-details.html" class="line-bnt">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <div class="single-service">
-                    <div class="service-img">
-                        <img src="assets/images/service/s6.png" alt="service" />
-                    </div>
-
-                    <div class="service-content">
-                        <h3> Wireless Connectivity</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel sit maxime assumenda. maiores, magnam</p>
-
-                        <a href="solutions-details.html" class="line-bnt">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

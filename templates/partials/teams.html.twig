@@ -8,205 +8,33 @@
         </div>
 
         <div class="home-team-slider owl-carousel owl-theme">
+            
+            {% for menber in allTeam() %}
             <div class="single-team">
                 <div class="team-img">
-                    <img src="assets/images/team/t1.jpg" alt="team" />
+                    <img src="/image/{{menber.photo}}" alt="team" />
                     <ul class="social">
                         <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                            <a href="{{menber.linked}}" target="_blank"><i class='bx bxl-linkedin'></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
+                            <a href="{{menber.facebook}}" target="_blank"><i class="bx bxl-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
+                            <a href="{{menber.Twitter}}" target="_blank"><i class="bx bxl-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
+                            <a href="mailto:{{menber.mail}}" target="_blank"><i class="bx bxs-envelope"></i></a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="content text-center">
-                    <h3>John Smith</h3>
-                    <p>Full Stack Developer</p>
+                    <h3>{{menber.name}}</h3>
+                    <p>{{menber.role}}</p>
                 </div>
             </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t2.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>Evana Doe</h3>
-                    <p>Web Developer</p>
-                </div>
-            </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t3.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>Bread Mc</h3>
-                    <p>IT Consulting</p>
-                </div>
-            </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t4.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>Maria Fread</h3>
-                    <p>UI/UX Designer</p>
-                </div>
-            </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t1.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>John Smith</h3>
-                    <p>Full Stack Developer</p>
-                </div>
-            </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t2.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>Evana Doe</h3>
-                    <p>Web Developer</p>
-                </div>
-            </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t3.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>Bread Mc</h3>
-                    <p>IT Consulting</p>
-                </div>
-            </div>
-
-            <div class="single-team">
-                <div class="team-img">
-                    <img src="assets/images/team/t4.jpg" alt="team" />
-                    <ul class="social">
-                        <li>
-                            <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxl-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><i class="bx bxs-envelope"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="content text-center">
-                    <h3>Maria Fread</h3>
-                    <p>UI/UX Designer</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
