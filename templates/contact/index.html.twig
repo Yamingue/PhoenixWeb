@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+{% include "partials/title.html.twig" %}
+<!-- Contact  -->
+<section class="contact-area pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-contact">
+                    <div class="icon">
+                        <i class='bx bx-time'></i>
+                    </div>
+                    <div class="content">
+                        <h3>Opening Hours</h3>
+                        <p>Sun - Thu : 10:00 AM - 06:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-contact">
+                    <div class="icon">
+                        <i class='bx bx-location-plus'></i>
+                    </div>
+                    <div class="content">
+                        <h3>Address</h3>
+                        <p>28/A Street, New York City, USA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <div class="single-contact">
+                    <div class="icon">
+                        <i class='bx bx-phone-call'></i>
+                    </div>
+                    <div class="content">
+                        <h3>Phone</h3>
+                        <p>+1 (321) 984 754</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact  -->
+
+<!-- Home Contact Area -->
+<section class="home-contact-area home-2-contact pb-100">
+    <div class="container">
+        <div class="section-title">
+            <span>Contact Us</span>
+            <h2>Let Us Know About Your Project Idea!</h2>
+            <p>It is a long established fact that a reader will be distracted by the rea dable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="content">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        {{ form_widget(form,{'attr':{'class':'col-lg-12 col-sm-12'}}) }}
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="default-btn page-btn box-btn">
+                                Submit
+                            </button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="contact-img-2">
+                    <img src="/assets/phoenix.png" alt="phoenix" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Area -->
+{% endblock %}
