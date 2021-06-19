@@ -1,0 +1,64 @@
+<!-- Service Area -->
+<section class="home-service-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span>Smart Services</span>
+            <h2>Paso Provide All Kind of Tech Solutions</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Quis ipsum suspendisse.</p>
+        </div>
+
+        <div class="row">
+            {% for solution in solutions() %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="single-service">
+                    <div class="service-img">
+                        <img src="/image/{{ solution.poster }}" alt="service" />
+                    </div>
+
+                    <div class="service-content">
+                        <h3>{{ solution.title }}</h3>
+                        <p>
+                            {{ solution.shortText }}
+                        </p>
+
+                        <a href="{{ path('solution_detail',{id:solution.id}) }}" class="line-bnt">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="col-lg-12">
+                <div class="page-navigation-area">
+                    <nav aria-label="Page navigation example text-center">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link page-links" href="#">
+                                    <i class='bx bx-chevrons-left'></i>
+                                </a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class='bx bx-chevrons-right'></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Service Area -->

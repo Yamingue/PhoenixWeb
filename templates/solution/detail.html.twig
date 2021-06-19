@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CaseController!{% endblock %}
+
+{% block body %}
+{% include "partials/title.html.twig" %}
+
+<!-- Start Services Details Area -->
+<section class="services-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="services-img mb">
+                    <img src="/image/{{solution.poster}}" alt="Image">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="services-details-text">
+                    <h2>{{solution.title}}</h2>
+                    {{solution.content |raw}}
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="scrives-item-3 mt-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="social">
+                        <ul class="social-link">
+                            <li>
+                                <a href="#">
+                                    <i class="bx bxl-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="bx bxl-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="bx bxl-pinterest-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="bx bxl-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="share">
+                        <a href="#">
+                            <i class="bx bx-share-alt"></i>
+                            Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Details Area -->
+{% endblock %}

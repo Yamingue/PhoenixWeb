@@ -4,6 +4,7 @@ namespace App\Twig;
 
 use App\Repository\CaseGroupeRepository;
 use App\Repository\CaseStudiesRepository;
+use App\Repository\SolutionRepository;
 use App\Repository\TeamRepository;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -14,12 +15,19 @@ class GeneralExtension extends AbstractExtension
     private $caseGroupeRepository;
     private $caseStudiesRepository;
     private $teamRepository;
+    private $solutionRepository;
 
-    public function __construct( CaseGroupeRepository $caseGroupeRepository,CaseStudiesRepository $caseStudiesRepository, TeamRepository $teamRepository )
+    public function __construct( 
+    CaseGroupeRepository $caseGroupeRepository,
+    CaseStudiesRepository $caseStudiesRepository, 
+    TeamRepository $teamRepository,
+    SolutionRepository $solutionRepository
+    )
     {
         $this->caseGroupeRepository = $caseGroupeRepository;
         $this->caseStudiesRepository = $caseStudiesRepository;
         $this->teamRepository = $teamRepository;
+        $this->solutionRepository = $solutionRepository;
     }
     public function getFilters(): array
     {
@@ -40,6 +48,7 @@ class GeneralExtension extends AbstractExtension
             new TwigFunction('caseGroupes', [$this, 'caseGroupes']),
             new TwigFunction('cases', [$this, 'cases']),
             new TwigFunction('allTeam', [$this, 'allTeam']),
+            new TwigFunction('solutions', [$this, 'solutions']),
 
         ];
     }
@@ -55,5 +64,9 @@ class GeneralExtension extends AbstractExtension
     public function allTeam()
     {
         return $this->teamRepository->findAll();
+    }
+    public function solutions()
+    {
+        return $this->solutionRepository->findAll();
     }
 }
