@@ -37,6 +37,11 @@ class CaseStudies
      */
     private $case_groupe;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $short_text;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class CaseStudies
     public function setCaseGroupe(?CaseGroupe $case_groupe): self
     {
         $this->case_groupe = $case_groupe;
+
+        return $this;
+    }
+
+    public function getShortText(): ?string
+    {
+        return $this->short_text;
+    }
+
+    public function setShortText(?string $short_text): self
+    {
+        $this->short_text = $short_text;
 
         return $this;
     }

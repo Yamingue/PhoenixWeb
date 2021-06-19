@@ -30,9 +30,9 @@
                         <a href="case-details.html">
                             <h3>{{case.title}}</h3>
                         </a>
-                        <p>{{case.description | raw}}</p>
+                        <p>{{case.shortText |slice(0, 100)}}...</p>
 
-                        <a href="case-details.html" class="line-bnt">
+                        <a href="{{path('case_detail',{id:case.id})}}" class="line-bnt">
                             View Project Details
                         </a>
                     </div>

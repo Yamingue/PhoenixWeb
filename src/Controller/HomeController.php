@@ -21,6 +21,7 @@ class HomeController extends AbstractController
     {
         return $this->render('home/index.html.twig', [
             'solutions' => $this->solutionRepository->findLasts(6),
+            'title' => 'Home'
         ]);
     }
 }

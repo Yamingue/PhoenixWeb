@@ -24,8 +24,10 @@ class CaseStudiesCrudController extends AbstractCrudController
             TextField::new('title'),
             ImageField::new('photo')
                 ->setBasePath('image/')
-                ->setUploadDir('public/image'),
+                ->setUploadDir('public/image')
+                ->setRequired(false),
             AssociationField::new('case_groupe'),
+            TextField::new('short_text'),
             TextEditorField::new('description')
                 ->setFormType(CKEditorType::class),
         ];
