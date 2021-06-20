@@ -2,13 +2,16 @@
 
 namespace App\Twig;
 
-use App\Repository\CaseGroupeRepository;
-use App\Repository\CaseStudiesRepository;
-use App\Repository\SolutionRepository;
-use App\Repository\TeamRepository;
-use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
+use App\Repository\PostRepository;
+use App\Repository\TeamRepository;
+use Twig\Extension\AbstractExtension;
+use App\Repository\SolutionRepository;
+use App\Repository\CaseGroupeRepository;
+use App\Repository\CaseStudiesRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class GeneralExtension extends AbstractExtension
 {
@@ -16,18 +19,24 @@ class GeneralExtension extends AbstractExtension
     private $caseStudiesRepository;
     private $teamRepository;
     private $solutionRepository;
+    private $postRepository;
+    private $paginator;
 
     public function __construct( 
     CaseGroupeRepository $caseGroupeRepository,
     CaseStudiesRepository $caseStudiesRepository, 
     TeamRepository $teamRepository,
-    SolutionRepository $solutionRepository
+    SolutionRepository $solutionRepository,
+    PostRepository $postRepository,
+    PaginatorInterface $paginator
     )
     {
         $this->caseGroupeRepository = $caseGroupeRepository;
         $this->caseStudiesRepository = $caseStudiesRepository;
         $this->teamRepository = $teamRepository;
         $this->solutionRepository = $solutionRepository;
+        $this->postRepository = $postRepository;
+        $this->paginator = $paginator;
     }
     public function getFilters(): array
     {
@@ -49,6 +58,8 @@ class GeneralExtension extends AbstractExtension
             new TwigFunction('cases', [$this, 'cases']),
             new TwigFunction('allTeam', [$this, 'allTeam']),
             new TwigFunction('solutions', [$this, 'solutions']),
+            new TwigFunction('posts', [$this, 'posts']),
+
 
         ];
     }
@@ -68,5 +79,14 @@ class GeneralExtension extends AbstractExtension
     public function solutions()
     {
         return $this->solutionRepository->findAll();
+    }
+    public function posts(Request $request)
+    {
+        return $this->paginator->paginate(
+            $this->postRepository->findAllQuery(), /* query NOT result */
+            $request->query->getInt('page', 1), /*page number*/
+            6 /*limit per page*/
+        );
+        
     }
 }

@@ -1,0 +1,49 @@
+<!-- Blog Area -->
+<section class="home-blog-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span>Blog Post</span>
+            <h2>Our Regular Blogs</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facilis vel consequatur tempora atque
+                blanditiis exercitationem incidunt, alias corporis quam assumenda dicta.</p>
+        </div>
+
+        <div class="row">
+            {% set posts = posts(app.request) %}
+            {% for post in posts %}
+            <div class="col-lg-4 col-md-6">
+                <div class="single-blog">
+                    <div class="blog-img">
+                        <a href="blog-details.html">
+                            <img src="/image/{{post.poster}}" alt="blog">
+                        </a>
+                    </div>
+
+                    <div class="content">
+                        <ul>
+                            <li>
+                                {{post.postAt | ago}}
+                            </li>
+                            <li>
+                                <a href="#">By {{post.postBy}}</a>
+                            </li>
+                        </ul>
+
+                        <a href="blog-details.html">
+                            <h3>{{post.title}}</h3>
+                        </a>
+                        <p>{{post.resume}}</p>
+
+                        <a href="blog-details.html" class="line-bnt">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="col-lg-12">
+                {{ knp_pagination_render(posts) }}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog Area -->
