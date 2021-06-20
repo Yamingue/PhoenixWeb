@@ -2,7 +2,7 @@
  <div class="navbar-area">
     <div class="mobile-nav">
         <a href="index.html" class="logo">
-            <img src="assets/images/logo.png" alt="logo" />
+            <a href="/"><img src="/assets/logo.png" alt="logo" /></a>
         </a>
     </div>
 
@@ -30,7 +30,7 @@
                             <a href="#" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact </a>
+                            <a href="{{ path('contact') }}" class="nav-link {% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">Contact </a>
                         </li>
                     </ul>
                 </div>

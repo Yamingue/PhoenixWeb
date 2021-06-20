@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\CaseGroupe;
 use App\Entity\CaseStudies;
 use App\Entity\Contact;
+use App\Entity\Post;
 use App\Entity\Solution;
 use App\Entity\Team;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -37,6 +38,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Case Studies','fas fa-paragraph',CaseStudies::class);
         yield MenuItem::linkToCrud('Message','fas fa-inbox',Contact::class);
         yield MenuItem::linkToCrud('Team Phoenix','fas fa-users',Team::class);
+        yield MenuItem::linkToCrud('Posts', ' fas fa-newspaper', Post::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }

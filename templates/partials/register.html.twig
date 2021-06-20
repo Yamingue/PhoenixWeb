@@ -1,0 +1,62 @@
+<!-- SignUp -->
+<section class="signup-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="signup-form">
+                    <div class="section-tittle text-center">
+                        <h2>Sign Up</h2>
+                        <p>With your social network</p>
+                    </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <a class="box-btn google" href="#" target="_blank">
+                                    <i class='bx bxl-google-plus'></i> Google
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <a class="box-btn facebook" href="#" target="_blank">
+                                    <i class='bx bxl-facebook'></i> Facebook
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <a class="box-btn twitter" href="#" target="_blank">
+                                    <i class='bx bxl-twitter'></i> Twitter
+                                </a>
+                            </div>
+                            <div class="col-sm-12">
+                                {% for flashError in app.flashes('verify_email_error') %}
+                                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                                {% endfor %}
+
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                {{ form_start(registrationForm) }}
+                                {{ form_row(registrationForm.email) }}
+                                {{ form_row(registrationForm.plainPassword, {
+                                label: 'Password'
+                                }) }}
+                                {{ form_row(registrationForm.agreeTerms) }}
+
+                                <div class="col-12 text-center">
+                                    <button class="box-btn signup-btn" type="submit">
+                                        Sign Up
+                                    </button>
+                                </div>
+                                {{ form_end(registrationForm) }}
+                            </div>
+                           
+                            <div class="col-12 text-center">
+                                <p class="al-acc">
+                                    Already have an account?
+                                    <a href="{{path('app_login')}}"> Sign In</a>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End SignUp -->
