@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Post;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class PostCrudController extends AbstractCrudController
 {
@@ -24,7 +26,7 @@ class PostCrudController extends AbstractCrudController
             ->setUploadDir('public/image');
         yield TextField::new('title');
         yield TextField::new('resume');
-        yield TextEditorField::new('content');
+        yield TextEditorField::new('content')->setFormType(CKEditorType::class);
     }
 
     public function createEntity(string $entityFqcn)
@@ -33,5 +35,11 @@ class PostCrudController extends AbstractCrudController
         $post->setPostBy($this->getUser());
 
         return $post;
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 }
