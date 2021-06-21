@@ -71,7 +71,11 @@
                             <div class="col-12 text-center">
                                 <p class="al-acc">
                                     Not a Member
-                                    <a href="singnup.html"> Sign Up</a>
+                                    <a href="{{ path('app_register') }}"> Sign Up</a>
+                                </p>
+                                <p class="al-acc">
+                                    Forgot password ?
+                                    <a href="{{ path('app_forgot_password_request') }}">Recover</a>
                                 </p>
                             </div>
                         </div>
