@@ -27,7 +27,7 @@
                             <a href="{{ path('case') }}" class="nav-link {% if app.request.attributes.get('_route') in ['case','case_detail'] %}active{% endif %}">Case Studies</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Blog</a>
+                            <a href="{{ path('blog') }}" class="nav-link {% if app.request.attributes.get('_route') in ['blog','blog_detail'] %}active{% endif %}">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ path('contact') }}" class="nav-link {% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">Contact </a>
