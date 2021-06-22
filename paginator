@@ -44,4 +44,5 @@ public function listAction(EntityManagerInterface $em, PaginatorInterface $pagin
 {# display navigation #}
 <div class="navigation">
     {{ knp_pagination_render(pagination) }}
+    MAILER_DSN=smtp://webmaster@yamking.zd.lu:_Kkingatal001@node1-ca.n0c.com:465
 </div>
