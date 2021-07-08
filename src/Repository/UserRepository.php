@@ -8,6 +8,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
+use League\OAuth2\Client\Provider\GithubResourceOwner;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -64,4 +65,26 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         ;
     }
     */
+
+     
+    public function findGithubClientFromOauth(GithubResourceOwner $resouce): ?User
+    {
+        //dd($resouce);
+        $user =  $this->createQueryBuilder('u')
+            ->andWhere('u.github = :val')
+            ->setParameter('val', $resouce->getId())
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+        if ($user) return $user;
+        $user = new User();
+        $user->setEmail($resouce->getEmail());
+        $user->setGithub($resouce->getId());
+        $user->setPassword(\uniqid());
+        $this->_em->persist($user);
+        $this->_em->flush();
+        return $user;
+    }
+    
+
 }

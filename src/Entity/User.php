@@ -44,6 +44,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $posts;
 
+    /**
+     * @ORM\Column(type="bigint", nullable=true)
+     */
+    private $github;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -168,5 +173,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
        return $this->email; 
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(?string $github): self
+    {
+        $this->github = $github;
+
+        return $this;
     }
 }
