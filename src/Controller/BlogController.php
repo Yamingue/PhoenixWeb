@@ -25,7 +25,7 @@ class BlogController extends AbstractController
     public function detail(Post $post): Response
     {
         return $this->render('blog/detail.html.twig', [
-            'title' => 'Blog',
+            'title' => $post->getTitle(),
             'post'=>$post
         ]);
     }
