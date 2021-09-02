@@ -22,7 +22,7 @@
                             <a href="{{ path('about') }}" class="nav-link {% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
+                            <a href="{{ path('solution') }}"
                                 class="nav-link {% if app.request.attributes.get('_route') in ['solution','solution_detail'] %}active{% endif %}">Solutions</a>
                         </li>
                         <li class="nav-item">
